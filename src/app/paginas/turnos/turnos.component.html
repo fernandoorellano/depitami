@@ -1,0 +1,45 @@
+<app-calendario></app-calendario>
+
+<div class="contenedor">
+    <div class="row">
+        <div class="col">
+            <p>{{calenServ.fechaCompletaActual}}</p>
+            <!-- <p>{{calenServ.nombreMesActualEsServ}}</p> -->
+            <p>{{tareaIngresada}}</p>
+            <button data-bs-toggle="modal" data-bs-target="#agregarModal">
+                Agregar              
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="agregarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p>{{calenServ.fechaCompletaActual}}</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" [formGroup]="formulario">
+                    <fieldset>
+                        <form id="formulario" (ngSubmit)="guardarTexto(formulario.value.texto, calenServ.fechaCompletaActual)" [formGroup]="formulario">
+                            <p>Ingresa el texto</p>
+                            <!-- <p>{{tareaIngresada}}</p> -->
+                            <input formControlName = "texto">
+                            <div class="error">
+                                <p *ngIf="formulario.controls['texto'].getError('required') && formulario.controls['texto'].touched">
+                                    El texto es requerido
+                                </p>
+                                <p *ngIf="formulario.controls['texto'].getError('minlength') && formulario.controls['texto'].touched">
+                                    El texto esta incompleto
+                                </p>
+                            </div>
+                            <button class="btn" data-bs-dismiss="modal">guardar</button>
+                            <button class="btn" data-bs-dismiss="modal">volver</button>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

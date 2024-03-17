@@ -1,0 +1,57 @@
+<fieldset>
+    <h3>Inicio sesion</h3>
+    <form id="formulario" (ngSubmit)="guardarCliente()" [formGroup]="formulario">
+        <div class="form-group campo">
+            <small>Ingrese su correo electronico</small>
+            <input
+                    type="text"
+                    autocomplete="email"
+                    class="form-control"
+                    placeholder="Email"
+                    formControlName = "email"
+                    >
+            <span class="error" *ngIf="formulario.controls['email'].getError('required') && formulario.controls['email'].touched">
+              El email es requerido
+            </span>
+            <span class="error" *ngIf="formulario.controls['email'].getError('minlength') && formulario.controls['email'].touched">
+              Email incorrecto
+            </span>
+        </div>
+        <div class="form-group">
+            <small>Ingrese su contraseña</small>
+            <input
+                type="password"
+                autocomplete="password"
+                class="form-control"
+                placeholder="Contraseña"
+                formControlName = "contraseña"
+            >
+            <span class="error" *ngIf="formulario.controls['contraseña'].getError('required') && formulario.controls['contraseña'].touched">
+                La contraseña es requerida
+            </span>
+            <span class="error" *ngIf="formulario.controls['contraseña'].getError('minlength') && formulario.controls['contraseña'].touched">
+                La contraseña es incorrecta
+            </span>
+        </div>
+     
+        <button type="submit" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#formModal">
+            <span>Registrar</span>
+        </button>
+
+        <p>Todavia no tenes una cuenta? <strong (click)="registro()">Regisrate</strong></p>
+    </form>
+</fieldset>
+
+<!-- Modal -->
+<div class="modal fade" id="formModal" data-bs-backdrop="false">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <h5 class="modal-title">{{tituloModal}}</h5>
+            <hr>
+            <div class="modal-body">
+                <p>{{mensajeModal}}</p>
+            </div>
+            <button type="button" class="btn" data-bs-dismiss="modal" (click)="confirmarEnvio()" [ngStyle]="btnModal">Cerrar</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+/* contenido principal */
+main{
+    background-color: rgb(170, 115, 221);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media (max-width: 800px){
+    main{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+/* footer */
+.contenedor{
+    margin-top: 15px;
+}
+
+p{
+    background-color: rgb(170, 115, 221);
+    /* bottom: 0; */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}

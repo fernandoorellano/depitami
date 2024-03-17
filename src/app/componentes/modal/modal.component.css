@@ -1,0 +1,38 @@
+/* ventana modal */
+
+.modal-dialog{
+    margin: 0;
+}
+
+.modal-content{
+    margin: 0;
+    height: 90vh;
+    width: 80vw;
+    float: right; 
+}
+
+.modal-header{
+    height: 12vh;
+}
+
+.modal-header button{
+    margin-right: 20px;
+}
+
+.navbar-nav{
+    margin-bottom: 30px;
+}
+
+.nav-item a{
+    text-transform: uppercase;
+    font-weight: 600;
+    color: blue;
+}
+
+.btn{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    background-color: blue;
+    width: 100%;
+    margin-bottom: 13px;
+}

@@ -1,0 +1,92 @@
+fieldset{
+    padding-top: 20px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 10px) and (max-width: 970px) {
+    fieldset{
+        margin-top: 0;
+    }
+}
+
+
+
+form{
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 10px) and (max-width: 455px) {
+    form{
+        width: 80vw;
+    }
+}
+
+.form-group{
+    /* border: 2px solid; */
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.error{
+    text-align: center;
+    width: auto;
+    font-size: 14px;
+    right: 1px;
+    background-color: rgb(255, 0, 0);
+    color: aliceblue;
+    height: 1.5rem;
+    position: absolute;
+    margin-top: 3px;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.btn{
+    margin-top: 2rem;
+    margin-bottom: 10px;
+}
+
+/* ventana modal */
+.modal-dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: black;
+}
+
+.modal-content{
+    text-align: center;
+    width: 20rem;
+   
+    margin-top: 4rem;
+}
+
+.modal-body{
+    min-height: 5rem;
+}
+
+.modal-dialog  button{
+    margin: 1.3rem;
+}
+
+.modal-dialog h5{
+    padding-top: 10px;
+}
+
+p{
+    margin-top: 25px;
+    text-align: center;
+}
+
+strong{
+    text-decoration: underline;
+    cursor: pointer;
+}

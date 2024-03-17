@@ -1,0 +1,107 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.row{
+    border: 1px solid;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+@media (max-width: 800px){
+    .row{
+        width: 95vw;
+    }
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col button{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
+/* ventana modal */
+
+.modal-content{
+    height: 70vh;
+    width: 40vw;
+    align-items: center;
+}
+
+@media (max-width: 800px){
+    .modal-content{
+        width: 90vw;
+    }
+}
+
+.modal-header{
+    height: 12vh;
+    width: 90%;
+}
+
+
+.modal-header p{
+    font-weight: 600;
+    color: blue;
+    font-size: 20px;
+}
+
+/* .modal-header button{
+    margin-right: 20px;
+} */
+
+.modal-body{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+    width: 30vw;
+    max-height: 40vh;
+}
+
+@media (max-width: 800px){
+    .modal-body{
+        width: 70vw;
+    }
+}
+
+
+
+.modal-body input{
+    width: 70%;
+}
+
+/* mensajeError */
+.error{
+    justify-content: center;
+    text-align: center;
+    /* width: 140px; */
+    font-size: 17px;
+    font-weight: 600;
+    color: red;
+    height: 40px;
+}
+
+.modal-body .btn{
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    font-weight: 600;
+    background-color: blue;
+    width: 100%;
+    margin-bottom: 13px;
+}
