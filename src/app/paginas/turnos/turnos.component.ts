@@ -34,7 +34,7 @@ export class TurnosComponent implements OnInit {
 
       this.formulario.controls['texto'].reset();
 
-      // this.router.navigate(['inicio']);
+      this.router.navigate(['inicio']);
     }
 
 
@@ -42,6 +42,7 @@ export class TurnosComponent implements OnInit {
       this.calenServ.tareaIngresadaDetalle = textoIngresado;
       this.calenServ.fechaNumerica[1][this.calenServ.nuevoIndice] = textoIngresado;    
       this.formulario.controls['texto'].reset();
+      this.router.navigate(['inicio']);
   }
 
 }
