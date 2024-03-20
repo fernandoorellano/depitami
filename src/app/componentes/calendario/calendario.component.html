@@ -21,21 +21,31 @@
                 </button>
             </div>
         </div>
-        <div class="col">
-            <ol>
+        <div class="calendario-body">
+            <ol class="calendario-dias">
                 <li *ngFor="let day of calenServ.diasSemanales" class="day-name">
-                    {{day | slice:0:3}}
+                    <p [ngClass]="{'styleColorRojoDiaDomingo': day == 'domingo' }">
+                        {{day | slice:0:3}}
+                    </p>
                 </li>
+            </ol>
+            <ol class="calendario-fechas">
                 <li [style.gridColumnStart]="first ? day ?.indexWeek : 'auto'"
                     *ngFor="let day of calenServ.monthSelect; index as index; let first = first"
                 >
                     <button (click)="clickDay(day, index+1)" class="btn">
-                        <!-- <p>{{day?.value}}</p> -->
-                        <p [ngClass]="{'styleColorRojo': day?.value == calenServ.numeroDiaActualEsServ}">{{day?.value}}</p>
+                        <p [ngClass]="{
+                                        'styleColorWhiteFechaActual': day.fechaCompleta == calenServ.fechaCompletaActual, 
+                                        'styleColorRojoDiaDomingo': day.nameDia == 'domingo', 
+                                        'styleColorWhiteDiaDomingo': day.nameDia != 'domingo',
+                                        'styleBorderColorBlueTareaAsignada': day.fechaCompleta == calenServ.fechaNumerica[0][index+1]
+                                    }"
+                                    >{{day.value}}</p>
+                        <!-- <p [ngClass]="{'styleColorRojo': day?.nameDia == 'domingo' }">{{day.value}}</p> -->
                     </button>
                 </li>
             </ol>
         </div>
     </div>
-
+  
 </div>

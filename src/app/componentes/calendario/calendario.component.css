@@ -5,12 +5,39 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     padding-bottom: 10px;
+}
+
+@media (max-width: 800px){
+    .contenedor{
+        padding-top: 10px;
+    }
+}
+
+.styleColorRojoDiaDomingo{
+    color: red;
+}
+
+.styleColorWhiteDiaDomingo{
+    color: aliceblue;
 }
 
 .styleColorRojo{
     color: red;
+    background-color: aliceblue;
+}
+
+.styleColorWhiteFechaActual{
+    background-color: red;
+    color: aliceblue;
+    /* border-radius: 13px; */
+    border: 1px solid white;
+}
+
+.styleBorderColorBlueTareaAsignada{
+    border-bottom: 2px solid blue;
+    border-radius: 0px;
 }
 
 .row{
@@ -29,15 +56,26 @@
     justify-content: space-between;
     align-items: center;
 
-    border: 1px solid white;
+    /* border: 1px solid white; */
     border-radius: 10px;
     height: 45px;
     margin-bottom: 10px;
 }
 
+@media (max-width: 800px){
+    .header-calendar{
+        margin-bottom: 3px;
+    }
+}
+
+.btn-prev:active, .btn-next:active{
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .btn-prev, .btn-next{
-    background-color:transparent;
-    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid transparent;
     color: aliceblue;
     border-radius: 6px;
     display: flex;
@@ -52,77 +90,100 @@
     padding: 0;
 }
 
-.col{
+.calendario-body{
     margin-top: 10px;
-    /* border: 1px solid red; */
+    padding-top: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 800px){
+    .calendario-body{
+        margin-top: 0px;
+    }
 }
 
 ol {
-    /* list-style: none; */
     display: grid;
-    
     grid-template-columns: repeat(7, 1fr);
-    margin: 0;
-    padding: 0;
-    height: 300px;
+    margin-bottom: 0;
+    width: 400px;
+}
 
-    border: 1px solid white;
-    /* align-content: center; */
-} 
+@media (max-width: 800px){
+    ol{
+        width: 95vw;
+        margin-right: 20px;
+    }
+}
+
+.calendario-fechas{
+    height: 250px;
+    border: 1px solid;
+}
+
+.calendario-dias{
+    border: 1px solid;
+    height: 30px;
+}
+
+@media (max-width: 800px){
+    .calendario-fechas, .calendario-dias{
+        border: none;
+    }
+}
+
+.day-name{
+    height: 30px;
+    margin: 0;
+    color: aliceblue;
+}
+
+.day-name p{
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+}
 
 li{
-    /* border: 1px solid; */
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: aqua; */
 }
 
-h2{
-    margin-bottom: 4px;
+button.btn{
+    border-radius: 0%;
+}
+
+.btn{
+    margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    /* border: 1px solid white; */
+    background-color:transparent;
+
+    border: none;
+}
+
+.btn p{
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    /* border-radius: 13px; */
+    padding: 3px;
+    font-weight: 600;
 }
 
 .first-day {
     grid-column-start: var(--first-day-start, 0);
 }
-
-.day-name{
-    font-size: 12px;
-    margin-bottom: 2px;
-    padding: 4px;
-    text-align: center;
-}
-
-
-
-/* .header-calendar button {
-    border: 0;
-} */
-
-
-
-li button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* align-content: center; */
-
-    width: 35px;
-    height: 35px;
-    border: 1px solid white;
-    color: aliceblue;
-    /* text-align: center; */
-    background-color:transparent;
-
-    /* display: flex; */
-}
-
-li p{
-    margin: 0;
-}
-
-
-
